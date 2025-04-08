@@ -1,0 +1,73 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>500</x><y>0</y><w>280</w><h>210</h></coordinates><panel_attributes>&lt;&lt;Orden&gt;&gt;
+--
+_idOrden: number
+_computadoras: Computadoras[]
+contadorOrdenes: number
+--
+agregarComputadora(computadora)
+mostrarOrden()
+toString(): string
+(agregar los metodos get/set de cada atributo)
+--
+Responsabilidades
+-- Crear un objeto de tipo Orden 
+y almacenar un arreglo de objetos 
+de tipo Computadora</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>310</y><w>280</w><h>160</h></coordinates><panel_attributes>&lt;&lt;Monitor&gt;&gt;
+--
+- idMonitor: number
+- marca: String
+- tamanio: String
+__contadorMonitor: number__
+--
+(Agregar los metodos get/set de los atributos)
+- toString()
+--
+Responsabilidades
+- Crear objetos de tipo Monitor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>430</y><w>210</w><h>120</h></coordinates><panel_attributes>Raton
+--
+- idRaton: number
+__contadorRaton: number__
+--
+- toString()
+--
+Responsabilidades
+- Crear objetos de tipo Raton</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>430</y><w>210</w><h>120</h></coordinates><panel_attributes>Teclado
+--
+- idTeclado: number
+__contadorTeclado: number__
+--
+toString()
+--
+Responsabilidades:
+- Crear objetos de tipo Teclado</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>10</y><w>350</w><h>210</h></coordinates><panel_attributes>&lt;&lt;Computadora&gt;&gt;
+
+--
+- idComputadora: number
+- nombre: String
+- monitor: Monitor
+- teclaado: Teclado
+- raton: Raton
+- contadorComputadoras: number
+--
+(Agregar los metodos get/set de  cada atributo)
+- toString(): string
+--
+Responsibilidades
+-- Crear de tipo Monitor
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>210</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;.
+</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>250</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=.
+&lt;&lt;agregar&gt;&gt;</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>260</y><w>30</w><h>320</h></coordinates><panel_attributes>lt=.
+</panel_attributes><additional_attributes>10;10;10;300</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>540</y><w>380</w><h>40</h></coordinates><panel_attributes>lt=.
+</panel_attributes><additional_attributes>10;20;360;20</additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>540</y><w>30</w><h>40</h></coordinates><panel_attributes>lt=.
+</panel_attributes><additional_attributes>10;20;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>540</y><w>30</w><h>40</h></coordinates><panel_attributes>lt=.
+</panel_attributes><additional_attributes>10;20;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>400</y><w>270</w><h>30</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;250;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>400</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>400</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>360</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>230</y><w>250</w><h>140</h></coordinates><panel_attributes>DispositivoEntrada
+--
+tipoEntrada: String
+marca: String
+--
+(Agregar los metodos get/set 
+de cada atributo)
+--
+Responsabilidades
+- Crear objetos de tipo DispositivoEntrada</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>90</y><w>150</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;.
+&lt;&lt;agregar&gt;&gt;</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element></diagram>
