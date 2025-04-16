@@ -1,0 +1,14 @@
+Programamos con diferentes tipos de archivos, ahora en .txt.
+Los acentos son importantes para las palabras
+Como por ejemplo: acción, ejecución, producción
+Letras:
+R(read), 
+W(write), 
+A(Append), 
+X(Exception)
+t es para texto (text), 
+b archivos binarios, 
+w+ y r+ lee y escribe (funcionan igual
+Es un Error: intentar acceder al archivo después de ejecutar el finally 
+Saludos 
+Y con esto terminamos
