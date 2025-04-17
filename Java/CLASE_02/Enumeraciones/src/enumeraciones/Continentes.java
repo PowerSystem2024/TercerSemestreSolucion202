@@ -3,11 +3,12 @@ package enumeraciones;
 
 public enum Continentes {
     
-    AFRICA (53, "1.2 billones"),
-    EUROPA (46, "1.1 billones"),
-    ASIA (44, "1.9 millones"),
-    AMERICA (34, "150.2 millones"),
-    OCEANIA (14, "1.2 billones");
+    AFRICA(54, "1.3 billones"), 
+    EUROPA(44, "742 millones" ),
+    ASIA(48, "4.8 billones"), 
+    AMERICA(35, "1.1 billones"),
+    OCEANIA(14, "46.1 millones"),
+    ANTARTIDA(0, "10 mil");    
     
     private final int paises;
     private String habitantes;
