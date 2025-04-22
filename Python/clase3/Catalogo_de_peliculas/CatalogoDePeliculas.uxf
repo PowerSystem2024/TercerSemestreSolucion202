@@ -1,0 +1,25 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes : str</help_text><element><id>UMLClass</id><coordinates><x>520</x><y>170</y><w>340</w><h>180</h></coordinates><panel_attributes>CatalogoPeliculas
+--
++ ruta_archivo: str &lt;&lt;static&gt;&gt;
+--
++ agregar_pelicula(Pelicual) &lt;&lt;static&gt;&gt;
++ listar_peliculas() &lt;&lt;static&gt;&gt;
++ eliminar() &lt;&lt;static&gt;&gt;
+--
+Resposabilidades:
+-- Realizar las operaciones sobre el archivo de peliculas .txt</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>180</y><w>270</w><h>150</h></coordinates><panel_attributes>Pelicula
+--
+- nombre: str 
+--
++ __str__()
+--
+Resposabilidades:
+-- Representa un objeto pelicula</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>170</y><w>330</w><h>190</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>150</y><w>130</w><h>20</h></coordinates><panel_attributes>dominio</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>140</y><w>130</w><h>20</h></coordinates><panel_attributes>dominio</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>160</y><w>370</w><h>210</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>230</y><w>150</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+&lt;&lt;agrega&gt;&gt;</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>390</y><w>270</w><h>150</h></coordinates><panel_attributes>test_catalogo_peliculas.py
+--
+Resposabilidades:
+-- Contiene un menu con 4 opciones
+	1) Agregar Peliculas
+	2) Listar pelicula 
+	3) Eliminar archivo de peliculas
+	4) Salir</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>120</y><w>800</w><h>450</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>100</y><w>130</w><h>20</h></coordinates><panel_attributes>Catalogo_peliculas</panel_attributes><additional_attributes></additional_attributes></element></diagram>
