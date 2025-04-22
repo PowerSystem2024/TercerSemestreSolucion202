@@ -1,0 +1,33 @@
+UTILIZACION DE POLIMORFISMO  
+
+🧬 ¿Qué es el polimorfismo aplicado a este caso? 
+
+Polimorfismo significa que distintos objetos pueden responder al mismo mensaje (método) de manera diferente. En tu código, esto se ve claramente cuando usás el método toString() en distintos objetos (Monitor, Raton, Teclado, Computadora), aunque cada clase tiene su propia implementación del método. 
+
+ 
+
+🧩 ¿Cómo lo usa la clase Orden? 
+
+La clase Orden no necesita saber cómo están implementadas internamente las computadoras ni sus componentes, porque confía en que todos esos objetos (como Computadora, que incluye Monitor, Raton y Teclado) tienen su propio comportamiento al ser convertidos a texto mediante toString(). 
+
+Esto invoca automáticamente el método toString() de la clase Computadora. 
+
+A su vez, el toString() de Computadora invoca el toString() de Monitor, Teclado y Raton, sin saber exactamente qué hacen, solo confía en que existen y están bien definidos. 
+
+ 
+
+🎯 ¿Entonces qué está haciendo la clase Orden con el polimorfismo? 
+
+✅ Aprovecha el polimorfismo de forma indirecta 
+ Porque usa console.log(computadora) o ${computadora} y deja que cada clase decida cómo se representa a sí misma. 
+
+✅ Simplifica su lógica 
+ No necesita preguntar si el objeto es un Ratón, Monitor, etc. Simplemente confía en el toString() polimórfico. 
+
+ 
+
+📝 Conclusión 
+
+La clase Orden usa el polimorfismo de manera implícita al permitir que cada computadora (y sus componentes) se representen a sí mismos mediante su propio método toString(), sin importar su clase específica. Así se consigue código más limpio, extensible y reutilizable. 
+
+ 
