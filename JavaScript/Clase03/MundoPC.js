@@ -102,3 +102,64 @@ class Orden{
 
     
 }
+let raton1 = new Raton('USB', 'Genius');
+let raton2 = new Raton('Bluetooth', 'Logitech')
+let raton3 = new Raton('Bluetooth', 'Microsoft');
+ 
+let teclado1 = new Teclado('USB', 'Razer');
+let teclado2 = new Teclado('USB', 'HyperX');
+let teclado3 = new Teclado('USB', 'Asus');
+ 
+let monitor1 = new Monitor('LG', 15);
+let monitor2 = new Monitor('Samsung', 22);
+let monitor3 = new Monitor('Samsung', 27);
+ 
+let computadora1 =  new Computadora('Acer', monitor1, raton1, teclado1);
+let computadora2 =  new Computadora('Asus', monitor2, raton2, teclado2);
+let computadora3 =  new Computadora('HP', monitor3, raton3, teclado3)
+let computadora4 =  new Computadora('Dell', monitor3, raton3, teclado2)
+ 
+let orden1 = new Orden();
+orden1.agregarComputadora(computadora1);
+orden1.agregarComputadora(computadora2);
+orden1.agregarComputadora(computadora3);
+orden1.agregarComputadora(computadora4);
+orden1.agregarComputadora(computadora1);
+orden1.mostrarOrden();
+ 
+function imprimir(tipo){
+    console.log(tipo.toString());
+    if( tipo instanceof DispositivoEntrada){
+        console.log('Es un objeto de tipo DispositivoEntrada');
+        console.log(tipo.tipoEntrada)
+    }
+    else if( tipo instanceof Raton){
+        console.log('Es un objeto de tipo Raton');
+    }
+    else if( tipo instanceof Teclado){
+        console.log('Es un objeto de tipo Teclado');
+        console.log(tipo._idTeclado)
+        console.log(tipo.toString())
+    }
+    else if( tipo instanceof Monitor){
+        console.log('Es un objeto de tipo Monitor');
+    }
+    else if( tipo instanceof Computadora){
+        console.log('Es un objeto de tipo Computadora');
+        console.log(tipo.toString());
+    }
+    else if( tipo instanceof Orden){
+        console.log('Es un objeto de tipo Orden');
+        console.log(tipo._idOrden);
+    }
+    else if( tipo instanceof Object){
+        console.log('Es un objeto de tipo Object');
+    }
+   
+}
+ 
+imprimir(raton1);
+imprimir(teclado1);
+imprimir(monitor3);
+imprimir(computadora3);
+imprimir(orden1);
