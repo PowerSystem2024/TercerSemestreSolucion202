@@ -1,4 +1,4 @@
-# Para insatalar PostgrSQL y PgAdmin (Web) en Linux Ubuntu
+# Para instalar PostgrSQL y PgAdmin (Web) en Linux Ubuntu
 
 ## 📌 Prerrequisitos
 - Sistema operativo Ubuntu (18.04, 20.04, 22.04 o superior)
