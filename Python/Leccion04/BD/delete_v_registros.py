@@ -20,13 +20,13 @@ try:
         # Crea un cursor para ejecutar consultas SQL
         with conexion.cursor() as cursor:
             # Consulta SQL 
-            sentencia = 'DELETE FROM persona WHERE id_persona=%s' 
+            sentencia = 'DELETE FROM persona WHERE id_persona IN %s' 
 
             # Vamos a darle al usuario la posibilidad de eliminar por id
-            entrada = input('Digite el numero de id que quiere eliminar: ')
+            entrada = input('Digite los numeros de id que quiere eliminar (Separados por coma): ')
             
             # Creamos una variable
-            valores = (entrada, ) # Es una tupla de valores
+            valores = (tuple(entrada.split(',')), ) # Tupla de tuplas
             
             # Ejecuta la consulta SQL
             cursor.execute(sentencia, valores)
