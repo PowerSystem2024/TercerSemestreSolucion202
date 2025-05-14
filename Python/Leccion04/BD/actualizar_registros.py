@@ -19,22 +19,19 @@ try:
     with conexion:
         # Crea un cursor para ejecutar consultas SQL
         with conexion.cursor() as cursor:
-            # Consulta SQL 
-            sentencia = 'DELETE FROM persona WHERE id_persona=%s' 
-
-            # Vamos a darle al usuario la posibilidad de eliminar por id
-            entrada = input('Digite el numero de id que quiere eliminar: ')
+            # Consulta SQL para seleccionar todos los registros de la tabla persona
+            sentencia = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE id_persona=%s' 
             
-            # Creamos una variable
-            valores = (entrada, ) # Es una tupla de valores
+            # Creamos una variable con una tupla de tuplas
+            valores = ('Juan Carlos', 'Roldan', 'rcarlos@mail.com', 1)
             
             # Ejecuta la consulta SQL
             cursor.execute(sentencia, valores)
             
             # Obtiene todos los registros resultantes de la consulta
-            registros_eliminados = cursor.rowcount
+            registros_actualizados = cursor.rowcount
 
-            print(f'Los registros eliminados son: {registros_eliminados}')
+            print(f'Los registros insertados son: {registros_actualizados}')
 
 except Exception as e:
     # Manejo de errores: captura cualquier excepción durante la ejecución
