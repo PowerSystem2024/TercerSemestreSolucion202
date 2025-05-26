@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salto del Caballo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      margin: 20px auto;
+      border: 2px solid #333;
+    }
+
+    .cell {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      border: 1px solid #999;
+    }
+
+    .white {
+      background-color: #f0d9b5;
+    }
+
+    .black {
+      background-color: #b58863;
+    }
+
+    .highlight {
+      background-color: yellow !important;
+    }
+
+    .visited {
+      background-color: lightgreen !important;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tour del Caballo 🐴</h1>
+  <button onclick="startTour()">Iniciar recorrido</button>
+  <div id="board"></div>
+
+  <!-- Llamamos al archivo JS externo -->
+  <script src="caballo.js"></script>
+</body>
+</html>
