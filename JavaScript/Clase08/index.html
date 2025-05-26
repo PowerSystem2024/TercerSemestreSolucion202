@@ -2,19 +2,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Salto del Caballo</title>
+  <title>Salto del Caballo - Comparación</title>
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
       margin: 20px;
+      text-align: center;
     }
 
-    #board {
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .board-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .board {
       display: grid;
       grid-template-columns: repeat(8, 60px);
       grid-template-rows: repeat(8, 60px);
-      margin: 20px auto;
       border: 2px solid #333;
     }
 
@@ -29,29 +45,28 @@
       border: 1px solid #999;
     }
 
-    .white {
-      background-color: #f0d9b5;
-    }
-
-    .black {
-      background-color: #b58863;
-    }
-
-    .highlight {
-      background-color: yellow !important;
-    }
-
-    .visited {
-      background-color: lightgreen !important;
-    }
+    .white { background-color: #f0d9b5; }
+    .black { background-color: #b58863; }
+    .visited { background-color: lightgreen !important; }
   </style>
 </head>
 <body>
-  <h1>Tour del Caballo 🐴</h1>
-  <button onclick="startTour()">Iniciar recorrido</button>
-  <div id="board"></div>
 
-  <!-- Llamamos al archivo JS externo -->
+  <h1>Comparación de Algoritmos: Salto del Caballo ♞</h1>
+  <button onclick="startBothTours()">Iniciar ambos recorridos</button>
+
+  <div class="container">
+    <div class="board-wrapper">
+      <div class="title">Backtracking Puro</div>
+      <div id="board-backtracking" class="board"></div>
+    </div>
+
+    <div class="board-wrapper">
+      <div class="title">Heurística de Warnsdorff</div>
+      <div id="board-heuristic" class="board"></div>
+    </div>
+  </div>
+
   <script src="caballo.js"></script>
 </body>
 </html>
