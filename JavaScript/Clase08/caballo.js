@@ -34,9 +34,18 @@ function highlightCell(x, y, moveCount, prefix) {
   const cell = document.getElementById(`${prefix}-cell-${x}-${y}`);
   if (cell) {
     cell.classList.add('visited');
-    cell.textContent = moveCount + 1;
+    cell.textContent = moveCount + 1; // Mostrar el número de movimiento
+  }
+
+  // Solo registrar movimientos para el tablero heurístico
+  if (prefix === "heuristic") {
+    const moveList = document.getElementById("move-list");
+    const li = document.createElement("li");
+    li.textContent = `${moveCount + 1}: (${x}, ${y})`;
+    moveList.appendChild(li);
   }
 }
+
 
 function unhighlightCell(x, y, prefix) {
   const cell = document.getElementById(`${prefix}-cell-${x}-${y}`);
