@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salto del Caballo - Comparación</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .board-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      border: 2px solid #333;
+    }
+
+    .cell {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      border: 1px solid #999;
+    }
+
+    .white { background-color: #f0d9b5; }
+    .black { background-color: #b58863; }
+    .visited { background-color: lightgreen !important; }
+  </style>
+</head>
+<body>
+
+  <h1>Comparación de Algoritmos: Salto del Caballo ♞</h1>
+  <button onclick="startBothTours()">Iniciar ambos recorridos</button>
+
+  <div class="container">
+    <div class="board-wrapper">
+      <div class="title">Backtracking Puro</div>
+      <div id="board-backtracking" class="board"></div>
+    </div>
+
+    <div class="board-wrapper">
+      <div class="title">Heurística de Warnsdorff</div>
+      <div id="board-heuristic" class="board"></div>
+    </div>
+  </div>
+
+  <script src="caballo.js"></script>
+</body>
+</html>
