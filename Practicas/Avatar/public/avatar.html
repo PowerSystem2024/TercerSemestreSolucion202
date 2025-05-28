@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <title>LA LEYENDA DE AANG: AVATAR</title>
-    
+    <script src="./js/avatar.js"></script>
 </head>
 <body>
     <h1>AVATAR 🔥💧🌱🌪️</h1>
-    <section id="seleccionar=personaje"> 
+    <section id="seleccionar=personaje">
         <h2>Elige tu Personaje</h2>
 
         <label for="Zuko">Zuko</label>
@@ -19,15 +19,13 @@
         <label for="Toph">Toph</label>
         <input type="radio" name="personaje" id="Toph">
 
-      <button id="boton-personaje">Seleccionar</button>
-    </section>  
-
-    
+    <button id="boton-personaje">Seleccionar</button>
+    </section>
 
     <section id="Seleccionar-ataque">
         <h2>Elige tu Ataque</h2>
-        <p>Tu personaje tiene <span>3 </span> vidas</p>
-        <p>Los personajes del enemigo tienen <span>3 </span> vidas</p>
+        <p>Tu personaje <span id="personaje-jugador"></span> tiene <span>3 </span> vidas</p>
+        <p>El personaje <span id="personaje-enemigo"></span> del enemigo tiene <span> 3 </span> vidas</p>
         <p>
             <button id="boton-fuego">Fuego 🔥</button>
             <button id="boton-agua">Agua 💧</button>
@@ -44,9 +42,6 @@
     <section id="reiniciar">
         <button id="boton-reiniciar">Reiniciar</button>
     </section>
-    <script src="./js/avatar.js"></script>
-
-    
 
 </body>
 </html>
