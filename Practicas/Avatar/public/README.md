@@ -3,6 +3,7 @@
 Este proyecto es un pequeño juego interactivo basado en Avatar: The Last Airbender, donde los usuarios pueden seleccionar un personaje y recibir una confirmación. A continuación, se detalla la estructura, funcionalidad y conceptos clave utilizados.
 
 # 📂 Estructura del Proyecto
+
 ## 1. Creación de la Estructura de Directorios
 
 Usamos comandos básicos en la terminal para organizar el proyecto:
@@ -20,7 +21,9 @@ Usamos comandos básicos en la terminal para organizar el proyecto:
 > code .                      # Abre el proyecto en VS Code
 
 ```
+
 # 🖥️ Maquetación HTML
+
 ## 1. Comentarios en VS Code
 
     Comentar/Descomentar línea: CTRL + K + C / CTRL + K + U
@@ -51,6 +54,7 @@ Usamos comandos básicos en la terminal para organizar el proyecto:
 <input type="radio" name="personaje" id="zuko" />
 
 ```
+
 🔹 Explicación:
 
     name="personaje" agrupa los radio buttons, permitiendo solo una selección a la vez.
@@ -66,7 +70,8 @@ Usamos comandos básicos en la terminal para organizar el proyecto:
 ```
 
 ## 4. Vinculación del JavaScript
-El script se carga al final del <body> para asegurar que el DOM esté listo antes de ejecutar el código:
+
+Cargamos el script dentro del <head> por lo cuál debimos incluir una línea de código al final del archivo js la cuál se detalla dentro de Funcionalidad con JavaScript (punto número 2. Event Listeners)
 
 ```sh
 
@@ -74,7 +79,10 @@ El script se carga al final del <body> para asegurar que el DOM esté listo ante
 
 ```
 
+Otra forma de hacerlo, sin usar el Event Listener mencionado en el párrafo anterior es colocar el script al final del <body> para asegurar que el DOM esté listo antes de ejecutar el código:
+
 # ⚙️ Funcionalidad con JavaScript
+
 ## 1. Captura de Elementos del DOM
 
 Usamos document.getElementById() para seleccionar elementos:
@@ -91,21 +99,40 @@ Asignamos acciones a los botones con addEventListener:
 botonPersonaje.addEventListener("click", seleccionarPersonajeJugador);
 ```
 
-## 3. Función seleccionarPersonajeJugador()
+Al modificar la posición del script dentro del .html ubicándolo dentro del head es preciso crear esta línea de código dentro del archivo .js al final para que pueda ejecutar iniciarJuego luego de que la ventana cargó todo
+
+```sh
+window.addEventListener('load', iniciarJuego);
+```
+
+## 3. innerHTML
+
+En esta ocasión lo utilizamos para agregar en texto en la página web el nombre del personaje elegido por el jugador y el personaje enemigo de la PC en dos etiquetas span.
+
+## 4. Función seleccionarPersonajeJugador()
 
 Esta función verifica qué personaje fue seleccionado y muestra un mensaje
 
+## 5. Función seleccionarPersonajeEnemigo()
+
+Esta función recibe como argumento el peprsonaje elegido por el jugador para filtrarlo y que la PC elija de forma aleatoria un personaje distinto al seleccionado por el jugador
+
 # 📚 Conceptos Teóricos Clave
+
 ## 1. DOM (Document Object Model)
 
 Estructura jerárquica que representa un documento HTML, permitiendo manipular dinámicamente contenido, estructura y estilos.
 
 ## 2. Radio Buttons vs Checkboxes
 
-    Radio Buttons: Solo una selección posible (mismo name).
+Radio Buttons: Solo una selección posible (mismo name).
 
-    Checkboxes: Múltiples selecciones permitidas.
+Checkboxes: Múltiples selecciones permitidas.
 
 ## 3. Event-Driven Programming
 
 JavaScript usa eventos (clics, teclas, etc.) para ejecutar funciones. addEventListener es el método principal para gestionarlos.
+
+## 4. innerHTML
+
+Es una propiedad de JavaScript que permite obtener o modificar el contenido HTML (código HTML y texto) de un elemento HTML específico en la página web. Es una de las formas más comunes y directas de manipular el contenido visible de un sitio web de forma dinámica.
