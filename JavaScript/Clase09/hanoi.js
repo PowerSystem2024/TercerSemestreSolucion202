@@ -48,9 +48,11 @@ function moverPaso() {
   const torreFrom = torres[from];
   const torreTo = torres[to];
   const disco = torreFrom.querySelector('.disco:last-of-type');
+  
 
   if (disco) {
     torreTo.appendChild(disco);
+    registrarMovimientoEnTabla(paso + 1, from, to);
   }
 
   paso++;
@@ -64,6 +66,9 @@ function iniciarAnimacion() {
   paso = 0;
   movimientos = [];
 
+  // 🧹 Limpiar la tabla de movimientos
+  document.getElementById('tabla-body').innerHTML = '';
+
   limpiarTorres();
   crearDiscos(NUM_DISCOS);
   hanoi(NUM_DISCOS, 'A', 'C', 'B');
@@ -76,3 +81,27 @@ function togglePausa() {
   pausa = !pausa;
   if (!pausa) moverPaso();
 }
+
+// función para registrar el movimiento en la tabla
+
+
+function registrarMovimientoEnTabla(numero, origen, destino) {
+  const tbody = document.getElementById('tabla-body');
+  const fila = document.createElement('tr');
+
+  const celdaNum = document.createElement('td');
+  celdaNum.textContent = numero;
+
+  const celdaOrigen = document.createElement('td');
+  celdaOrigen.textContent = origen;
+
+  const celdaDestino = document.createElement('td');
+  celdaDestino.textContent = destino;
+
+  fila.appendChild(celdaNum);
+  fila.appendChild(celdaOrigen);
+  fila.appendChild(celdaDestino);
+
+  tbody.appendChild(fila);
+}
+
