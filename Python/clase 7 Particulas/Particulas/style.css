@@ -1,0 +1,13 @@
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+canvas.fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
