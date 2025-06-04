@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Torres de Hanoi</title>
+  <link rel="stylesheet" href="hanoi.css">
+</head>
+
+<body>
+  <h1>Torres de Hanoi</h1>
+
+  <div class="main-container">
+    <!-- Panel torres -->
+    <div class="torres-container">
+      <div class="torres">
+        <div class="torre" id="A">
+          <div class="panel-title">Panel 1</div>
+          <div class="varilla"></div>
+        </div>
+        <div class="torre" id="B">
+          <div class="panel-title">Panel 2</div>
+          <div class="varilla"></div>
+        </div>
+        <div class="torre" id="C">
+          <div class="panel-title">Panel 3</div>
+          <div class="varilla"></div>
+        </div>
+      </div>
+
+      <div class="botones">
+        <button onclick="iniciarAnimacion()">Iniciar/Reiniciar</button>
+        <button onclick="togglePausa()">Pausar/Reanudar</button>
+      </div>
+    </div>
+
+    <!-- Panel tabla movimientos -->
+    <div id="tabla-movimientos">
+      <h3>Movimientos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>De</th>
+            <th>A</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="hanoi.js"></script>
+
+</body>
+
+</html>

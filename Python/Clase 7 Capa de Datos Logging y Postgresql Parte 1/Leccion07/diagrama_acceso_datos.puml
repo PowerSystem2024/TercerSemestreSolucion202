@@ -1,0 +1,46 @@
+diagrama_acceso_datos.puml
+@startuml
+
+package acceso_datos {
+
+    class conexion {
+        - DATABASE: String
+        - USERNAME: String
+        - PASSWORD: String
+        - DB_PORT: String
+        - HOST: String
+        - conexion: connection
+        - cursor: Cursor
+        + obtenerConexion(ds): Connection
+        + obtenerCursor(ds): Cursor
+        + cerrar(ds)
+        __Responsabilidades__: Administrar la conexión a la base de datos
+    }
+
+    class Persona {
+        - id_persona: int
+        - nombre: String
+        - apellido: String
+        - email: String
+        + __str__(): String
+        + método Get/Set de cada atributo
+        __Responsabilidades__: Crear objetos de la entidad de Persona
+    }
+
+    class PersonaDao {
+        - SELECCIONAR: String
+        - INSERTAR: String
+        - ACTUALIZAR: String
+        - ELIMINAR: String
+        + seleccionar(ds)
+        + insertar(ds, persona)
+        + actualizar(ds, persona)
+        + eliminar(ds, persona)
+        __Responsabilidades__: Realizar las operaciones sobre la base de datos de la entidad Persona
+    }
+
+    conexion --> PersonaDao
+    Persona --> PersonaDao
+}
+
+@enduml
