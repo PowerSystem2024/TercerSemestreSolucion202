@@ -1,14 +1,13 @@
-// avatar.js
 
 // ======================
-// 1) LISTA DE PERSONAJES (por si la quieres reutilizar en otro lugar)
+// 1) LISTA DE PERSONAJES 
 // ======================
 const personajesDisponibles = ['Zuko', 'Katara', 'Aang', 'Toph'];
 
 // ======================
 // 2) VARIABLES GLOBALES
 // ======================
-// Estos iremos llenando al hacer clic en “Seleccionar Jugador” y “Seleccionar Enemigo”
+
 let personajeJugador = '';
 let personajeEnemigo = '';
 
@@ -49,7 +48,7 @@ function iniciarJuego() {
     document.getElementById("reiniciar").style.display = 'none';
 }
 
-// Ejecutamos iniciarJuego cuando el DOM esté listo
+// Ejecutamos iniciarJuego
 window.addEventListener('load', iniciarJuego);
 
 // ======================
@@ -87,7 +86,7 @@ function seleccionarPersonajeJugador() {
 }
 
 // ======================
-// 5) SELECCIÓN DEL PERSONAJE ENEMIGO (YA NO ALEATORIO)
+// 5) SELECCIÓN DEL PERSONAJE ENEMIGO 
 // ======================
 function seleccionarPersonajeEnemigo() {
     // 5.1) Leemos qué radio de “personaje-enemigo” está chequeado
@@ -155,7 +154,7 @@ function deshabilitarBotonesAtaque() {
 // 8) MANEJAR ATAQUE DEL JUGADOR
 // ======================
 function manejarAtaque(ataqueJugador) {
-    // Si el juego ya terminó o alguno no está definido, no hacemos nada
+   
     if (vidasJugador <= 0 || vidasEnemigo <= 0) return;
     if (personajeJugador === '' || personajeEnemigo === '') return;
 
