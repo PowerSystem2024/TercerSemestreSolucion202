@@ -1,0 +1,267 @@
+/* ---------------  RESET BÁSICO  --------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f1f1f1;
+    background: url("../img/fondoAvatar.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ---------------  CONTENEDOR GENERAL  --------------- */
+
+.contenedor-juego {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Caja semitransparente para legibilidad */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------------  ENCABEZADO / TÍTULO  --------------- */
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.titulo-juego {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: #ffdd57; /* Color dorado para resaltar */
+}
+
+/* ---------------  SUBTÍTULOS DE SECCIONES  --------------- */
+
+.subtitulo {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------  PANEL DE SELECCIÓN DE PERSONAJE  --------------- */
+
+#seleccionar-personaje {
+    margin-bottom: 30px;
+}
+
+.personajes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.opcion-personaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffffff33;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+}
+
+.opcion-personaje:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.opcion-personaje input[type="radio"] {
+    display: none; /* Ocultar el círculo predeterminado */
+}
+
+.img-personaje {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border 0.2s;
+}
+
+/* Cuando el radio esté seleccionado, resaltar la imagen */
+.opcion-personaje input[type="radio"]:checked + .img-personaje,
+.opcion-personaje input[type="radio"]:checked + .img-personaje + .nombre-personaje {
+    border-color: #ffaa00;
+}
+
+/* Nombre debajo de la imagen */
+.nombre-personaje {
+    font-size: 1rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Botón Seleccionar Personaje */
+.btn-primario {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    background-color: #ffaa00;
+    color: #1b1b1b;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primario:hover {
+    background-color: #ffcc33;
+    transform: translateY(-2px);
+}
+
+/* ---------------  PANEL DE SELECCIÓN DE ATAQUE  --------------- */
+
+#seleccionar-ataque {
+    margin-bottom: 30px;
+}
+
+.vidas {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.vidas .resaltado {
+    font-weight: bold;
+    color: #ffdd57;
+}
+
+.botones-ataque {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.botones-ataque .btn {
+    flex: 1 1 calc(45% - 10px);
+    margin: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #b81a1a;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+/* Colores específicos para cada tipo de ataque */
+.btn-puño {
+    background-color: #e63900;
+}
+.btn-puño:hover {
+    background-color: #ff3b00;
+}
+
+.btn-patada {
+    background-color: #1d4e89;
+}
+.btn-patada:hover {
+    background-color: #3a75c4;
+}
+
+.btn-embestida {
+    background-color: #6a994e;
+}
+.btn-embestida:hover {
+    background-color: #8abf78;
+}
+
+.btn-barrida {
+    background-color: #9aa5b1;
+}
+.btn-aire:hover {
+    background-color: #c0c6ce;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------  PANEL DE MENSAJES  --------------- */
+
+#mensajes {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 60px;
+    margin-bottom: 30px;
+}
+
+#texto-mensaje {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* ---------------  PANEL DE REINICIAR  --------------- */
+
+#reiniciar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-secundario {
+    padding: 10px 18px;
+    background-color: #444;
+    color: #ddd;
+    border: 2px solid #666;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secundario:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+/* ---------------  TIPOGRAFÍA ADICIONAL — ADAPTACIONES RESPONSIVAS  --------------- */
+
+@media (max-width: 600px) {
+    .img-personaje {
+        width: 60px;
+        height: 60px;
+    }
+    .opcion-personaje {
+        width: 90px;
+        margin: 6px;
+        padding: 8px;
+    }
+    .subtitulo {
+        font-size: 1.5rem;
+    }
+    .titulo-juego {
+        font-size: 2rem;
+    }
+    .botones-ataque .btn {
+        flex: 1 1 100%;
+        margin: 5px 0;
+    }
+}
