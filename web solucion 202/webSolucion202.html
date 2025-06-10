@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 202 - Web Development Team</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+    <img src="./resources/img/logoS202.png" alt="Solution 202 Logo" class="logo">
+    <h1>Solution 202</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section id="about">
+    <h2>About Us</h2>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="resources/img/juan1.png" alt="Juan Orellana">
+            <h3>Juan Orellana</h3>
+            <p>Back-end specialist passionate about cybersecurity and Docker containerization for efficient deployment.</p>
+        </div>
+        <div class="team-member">
+            <img src="resources/img/Emma.png" alt="Emmanuel Herrera">
+            <h3>Emmanuel Herrera</h3>
+            <p>- Database expert fascinated by data management and emerging technologies for scalable solutions.</p>
+        </div>
+        <div class="team-member">
+            <img src="./resources/img/gime.png" alt="Gimena Gauna">
+            <h3>Gimena Gauna</h3>
+            <p>- Front-end designer focused on crafting intuitive interfaces and precise layouts with Figma.</p>
+        </div>
+        <div class="team-member">
+            <img src="resources/img/nacho.png" alt="Ignacio Velazquez">
+            <h3>Ignacio Velazquez</h3>
+            <p>- Back-end developer skilled in API development and packaging technologies to optimize services.</p>
+        </div>
+        <div class="team-member">
+            <img src="resources/img/maxi.png" alt="Maxi Montenegro">
+            <h3>Maxi Montenegro</h3>
+            <p>- Game developer enthusiast, creating immersive experiences with Godot, C#, and C++.</p>
+        </div>
+
+        <div class="team-member">
+            <img src="resources/img/franco.png" alt="Franco Poblete">
+            <h3>Franco Poblete</h3>
+            <p>-  Front-end lover and graphic design specialist, blending aesthetics with functional web layouts.</p>
+        </div>
+    </div>
+</section>
+
+    <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+        <div class="project-card">
+            <img src="./resources/img/miturno.png" alt="MiTurno">
+            <h3>MiTurno</h3>
+            <p>A modular application built with Python , integrated with a Postgres database, Docker.</p>
+            <span>Technologies: Python, Postgres, Docker</span>
+        </div>
+        <div class="project-card">
+            <img src="./resources/img/battleshipp.png" alt="BattleShip Game">
+            <h3>Game Development Showcase</h3>
+            <p>A 2D adventure game designed with Godot, featuring advanced mechanics in C# and C++.</p>
+            <span>Technologies: Godot, C#, C++</span>
+        </div>
+        <div class="project-card">
+            <img src="./resources/img/casino.png" alt="casino">
+            <h3>Casino Game</h3>
+            <p>A Casino Game , multiplataform, showcasing UI/UX skills, built with Figma and front-end technologies.</p>
+            <span>Technologies: HTML, CSS, JavaScript, Mongodb</span>
+        </div>
+    </div>
+</section>
+
+    <section id="technologies">
+    <h2>Technologies</h2>
+    <div class="tech-container">
+        <div class="tech-item">
+            <i class="fab fa-html5"></i>
+            <span>HTML</span>
+        </div>
+        <div class="tech-item">
+            <i class="fab fa-css3-alt"></i>
+            <span>CSS</span>
+        </div>
+        <div class="tech-item">
+            <i class="fab fa-js"></i>
+            <span>JavaScript</span>
+        </div>
+        <div class="tech-item">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+        </div>
+        <div class="tech-item">
+            <i class="fas fa-database"></i>
+            <span>MongoDB</span>
+        </div>
+        <div class="tech-item">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+        </div>
+        <div class="tech-item">
+            <i class="fas fa-cube"></i>
+            <span>Docker</span>
+        </div>
+        <div class="tech-item">
+            <i class="fas fa-gamepad"></i>
+            <span>Godot</span>
+        </div>
+        <div class="tech-item">
+            <i class="fas fa-brain"></i>
+            <span>Artificial Intelligence</span>
+        </div>
+    </div>
+</section>
+
+   <section id="contact">
+    <h2>Contact</h2>
+    <p>Get in touch with Solution 202!</p>
+    
+    <form action="mailto:contact@solution202.com" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="social-links">
+        <a href="https://github.com/solution202" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/solution202" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:contact@solution202.com"><i class="fas fa-envelope"></i></a>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>

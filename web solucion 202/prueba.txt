@@ -1,0 +1,6 @@
+- Juan Orellana – Back-end specialist passionate about cybersecurity and Docker containerization for efficient deployment.
+- Maxi Montenegro – Game developer enthusiast, creating immersive experiences with Godot, C#, and C++.
+- Gimena – Front-end designer focused on crafting intuitive interfaces and precise layouts with Figma.
+- Emma – Database expert fascinated by data management and emerging technologies for scalable solutions.
+- Nacho – Back-end developer skilled in API development and packaging technologies to optimize services.
+- Franco Poblete – Front-end lover and graphic design specialist, blending aesthetics with functional web layouts.
