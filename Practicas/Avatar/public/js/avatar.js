@@ -248,6 +248,9 @@ function finalizarJuego() {
 // 12) REINICIAR JUEGO
 // ======================
 function reiniciarJuego() {
+    // Quitar resaltado de todas las tarjetas de personajes
+    document.querySelectorAll('.opcion-personaje').forEach(card => card.classList.remove('seleccionado'));
+
     // 12.1) Restablecer variables
     personajeJugador = '';
     personajeEnemigo = '';
