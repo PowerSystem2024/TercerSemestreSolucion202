@@ -242,6 +242,59 @@ header {
     color: #fff;
 }
 
+/* ---------------  PANEL DE REGLAS DEL JUEGO  --------------- */
+
+#panel-reglas {
+    border-radius: 12px;
+    background: #f8f9fa;
+    border: 2px solid #1976d2;
+    color: #222;
+    box-shadow: 0 4px 24px #0002;
+    max-width: 340px;
+    min-width: 260px;
+    font-size: 1rem;
+    transition: box-shadow 0.2s;
+}
+
+#panel-reglas h3 {
+    margin-top: 0;
+    color: #1976d2;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+#panel-reglas ul {
+    padding-left: 18px;
+    margin-bottom: 12px;
+}
+
+#panel-reglas li {
+    margin-bottom: 7px;
+    line-height: 1.5;
+}
+
+#panel-reglas button {
+    margin-top: 8px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+
+#panel-reglas button:hover {
+    background: #125ea2;
+}
+
+/* ---------------  NUEVO ESTILO PARA REGLAS  --------------- */
+
+#panel-reglas li strong {
+    color: #d32f2f;
+}
+
 /* ---------------  TIPOGRAFÍA ADICIONAL — ADAPTACIONES RESPONSIVAS  --------------- */
 
 @media (max-width: 600px) {
@@ -264,4 +317,13 @@ header {
         flex: 1 1 100%;
         margin: 5px 0;
     }
+}
+
+/* Resaltado llamativo para personaje seleccionado */
+.opcion-personaje.seleccionado {
+    border: 3px solid #ffaa00;
+    background: linear-gradient(120deg, #fffbe6 70%, #ffe082 100%);
+    box-shadow: 0 0 18px 4px #ffecb3, 0 0 0 4px #ffaa0055;
+    transform: scale(1.08) rotate(-2deg);
+    transition: all 0.25s cubic-bezier(.4,2,.6,1);
 }
