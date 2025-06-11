@@ -98,6 +98,27 @@
         <section id="reiniciar" class="panel panel-reiniciar" style="margin-top: 20px;">
             <button id="boton-reiniciar" class="btn btn-secundario">Reiniciar</button>
         </section>
+
+        <!-- Botón y panel de reglas -->
+        <div style="display: flex; justify-content: flex-end; margin: 10px 30px 0 0;">
+            <button id="boton-reglas" class="btn btn-secundario">Ver reglas</button>
+        </div>
+        <div id="panel-reglas" style="display:none; position:fixed; top:60px; right:40px; background:#fff; border:2px solid #888; padding:18px 24px; z-index:1000; box-shadow:0 2px 12px #0003;">
+            <h3>Reglas del juego</h3>
+            <ul style="margin-bottom:12px;">
+                <li>Selecciona tu personaje y el del enemigo.</li>
+                <li>Cada jugador comienza con 3 vidas.</li>
+                <li>Elige un ataque: Puño, Embestida, Patada o Barrida.</li>
+                <li>Las combinaciones determinan quién gana cada ronda.</li>
+                <li>¡Gana quien deje sin vidas al rival!</li>
+                <li><strong>Comparativa de ataques:</strong></li>
+                <li>Puño vence a Patada</li>
+                <li>Patada vence a Barrida</li>
+                <li>Barrida vence a Embestida</li>
+                <li>Embestida vence a Puño</li>
+            </ul>
+            <button id="cerrar-reglas" class="btn btn-secundario">Cerrar</button>
+        </div>
     </div>
 </body>
 </html>

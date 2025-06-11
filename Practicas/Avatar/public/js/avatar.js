@@ -1,4 +1,3 @@
-
 // ======================
 // 1) LISTA DE PERSONAJES 
 // ======================
@@ -46,6 +45,14 @@ function iniciarJuego() {
     document.getElementById("seleccionar-ataque").style.display = 'none';
     document.getElementById("mensajes").style.display = 'none';
     document.getElementById("reiniciar").style.display = 'none';
+
+    // Mostrar y ocultar reglas del juego
+    document.getElementById("boton-reglas").addEventListener("click", function() {
+        document.getElementById("panel-reglas").style.display = "block";
+    });
+    document.getElementById("cerrar-reglas").addEventListener("click", function() {
+        document.getElementById("panel-reglas").style.display = "none";
+    });
 }
 
 // Ejecutamos iniciarJuego
@@ -78,6 +85,12 @@ function seleccionarPersonajeJugador() {
     document.getElementById("boton-personaje").disabled = true;
     document.getElementsByName("personaje-jugador")
             .forEach(radio => radio.disabled = true);
+
+    // Quitar resaltado solo de las tarjetas de jugador
+    document.querySelectorAll('.opcion-personaje[for$="-jugador"]').forEach(card => card.classList.remove('seleccionado'));
+    // Resaltar la tarjeta seleccionada de jugador
+    let label = document.querySelector(`label[for="${personajeJugador}-jugador"]`);
+    if (label) label.classList.add('seleccionado');
 
     // Si el enemigo ya estaba seleccionado antes, mostramos los paneles
     if (personajeEnemigo !== '') {
@@ -112,6 +125,12 @@ function seleccionarPersonajeEnemigo() {
     document.getElementById("boton-enemigo").disabled = true;
     document.getElementsByName("personaje-enemigo")
             .forEach(radio => radio.disabled = true);
+
+    // Quitar resaltado solo de las tarjetas de enemigo
+    document.querySelectorAll('.opcion-personaje[for$="-enemigo"]').forEach(card => card.classList.remove('seleccionado'));
+    // Resaltar la tarjeta seleccionada de enemigo
+    let label = document.querySelector(`label[for="${personajeEnemigo}-enemigo"]`);
+    if (label) label.classList.add('seleccionado');
 
     // Si el jugador ya estaba seleccionado antes, mostramos los paneles
     if (personajeJugador !== '') {
