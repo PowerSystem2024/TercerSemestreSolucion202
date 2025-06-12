@@ -22,10 +22,6 @@ function iniciarJuego() {
     document.getElementById("boton-personaje")
             .addEventListener("click", seleccionarPersonajeJugador);
 
-    // 3.2) Botón para seleccionar enemigo
-    document.getElementById("boton-enemigo")
-            .addEventListener("click", seleccionarPersonajeEnemigo);
-
     // 3.3) Botones de ataque (deshabilitados hasta que ambos personajes estén elegidos)
     document.getElementById("boton-puño")
             .addEventListener("click", () => manejarAtaque("PUÑO"));
@@ -84,7 +80,7 @@ function seleccionarPersonajeJugador() {
     // Una vez elegido el jugador, deshabilitamos sus radios para no cambiar a mitad de proceso
     document.getElementById("boton-personaje").disabled = true;
     document.getElementsByName("personaje-jugador")
-            .forEach(radio => radio.disabled = true);
+        .forEach(radio => radio.disabled = true);
 
     // Quitar resaltado solo de las tarjetas de jugador
     document.querySelectorAll('.opcion-personaje[for$="-jugador"]').forEach(card => card.classList.remove('seleccionado'));
@@ -92,10 +88,21 @@ function seleccionarPersonajeJugador() {
     let label = document.querySelector(`label[for="${personajeJugador}-jugador"]`);
     if (label) label.classList.add('seleccionado');
 
-    // Si el enemigo ya estaba seleccionado antes, mostramos los paneles
-    if (personajeEnemigo !== '') {
-        mostrarPanelAtaque();
-    }
+    // Selección aleatoria del enemigo (que no sea el mismo que el jugador)
+    const posiblesEnemigos = personajesDisponibles.filter(p => p !== personajeJugador);
+    personajeEnemigo = posiblesEnemigos[Math.floor(Math.random() * posiblesEnemigos.length)];
+
+    // Mostrar en pantalla el enemigo elegido
+    document.getElementById("personaje-enemigo").innerText = personajeEnemigo;
+
+    // Quitar resaltado solo de las tarjetas de enemigo
+    document.querySelectorAll('.opcion-personaje[for$="-enemigo"]').forEach(card => card.classList.remove('seleccionado'));
+    // Resaltar la tarjeta seleccionada de enemigo
+    let labelEnemigo = document.querySelector(`label[for="${personajeEnemigo}-enemigo"]`);
+    if (labelEnemigo) labelEnemigo.classList.add('seleccionado');
+
+    // Mostrar paneles de ataque, mensajes y reinicio
+    mostrarPanelAtaque();
 }
 
 // ======================
@@ -272,12 +279,6 @@ function reiniciarJuego() {
     // 12.4) Reactivar los botones de selección de personaje
     document.getElementById("boton-personaje").disabled = false;
     document.getElementsByName("personaje-jugador").forEach(radio => {
-        radio.checked = false;
-        radio.disabled = false;
-    });
-
-    document.getElementById("boton-enemigo").disabled = false;
-    document.getElementsByName("personaje-enemigo").forEach(radio => {
         radio.checked = false;
         radio.disabled = false;
     });
