@@ -49,6 +49,20 @@ function iniciarJuego() {
     document.getElementById("cerrar-reglas").addEventListener("click", function() {
         document.getElementById("panel-reglas").style.display = "none";
     });
+
+    // Crear y ocultar el botón "Luchar"
+    let btnLuchar = document.createElement("button");
+    btnLuchar.id = "boton-luchar";
+    btnLuchar.className = "btn btn-primario";
+    btnLuchar.innerText = "Luchar";
+    btnLuchar.style.display = "none";
+    document.getElementById("seleccionar-enemigo").appendChild(btnLuchar);
+
+    btnLuchar.addEventListener("click", function () {
+        document.getElementById("seleccionar-personaje").style.display = "none";
+        document.getElementById("seleccionar-enemigo").style.display = "none";
+        mostrarPanelAtaque();
+    });
 }
 
 // Ejecutamos iniciarJuego
@@ -58,7 +72,6 @@ window.addEventListener('load', iniciarJuego);
 // 4) SELECCIÓN DEL PERSONAJE JUGADOR
 // ======================
 function seleccionarPersonajeJugador() {
-    // 4.1) Leemos qué radio de “personaje-jugador” está chequeado
     let spanPJ = document.getElementById('personaje-jugador');
 
     if (document.getElementById("Zuko-jugador").checked) {
@@ -74,10 +87,10 @@ function seleccionarPersonajeJugador() {
         return;
     }
 
-    // Mostramos en la pantalla cuál fue el elegido
+    // Mostrar el personaje elegido
     spanPJ.innerText = personajeJugador;
 
-    // Una vez elegido el jugador, deshabilitamos sus radios para no cambiar a mitad de proceso
+    // Deshabilitar radios de jugador
     document.getElementById("boton-personaje").disabled = true;
     document.getElementsByName("personaje-jugador")
         .forEach(radio => radio.disabled = true);
@@ -101,8 +114,8 @@ function seleccionarPersonajeJugador() {
     let labelEnemigo = document.querySelector(`label[for="${personajeEnemigo}-enemigo"]`);
     if (labelEnemigo) labelEnemigo.classList.add('seleccionado');
 
-    // Mostrar paneles de ataque, mensajes y reinicio
-    mostrarPanelAtaque();
+    // Mostrar el botón "Luchar"
+    document.getElementById("boton-luchar").style.display = "block";
 }
 
 // ======================
@@ -149,10 +162,40 @@ function seleccionarPersonajeEnemigo() {
 // 6) MOSTRAR PANEL DE ATAQUE SI AMBOS PERSONAJES ESTÁN ELEGIDOS
 // ======================
 function mostrarPanelAtaque() {
-    // Solo una vez que jugador y enemigo estén definidos, mostramos todo lo demás
+    // Mostrar paneles
     document.getElementById("seleccionar-ataque").style.display = 'block';
     document.getElementById("mensajes").style.display = 'block';
     document.getElementById("reiniciar").style.display = 'block';
+
+    // Mostrar imágenes y nombres en el panel VS
+    const imagenes = {
+        Zuko: "./img/zuko.jpg",
+        Katara: "./img/katara.jpg",
+        Aang: "./img/Aang.jpg",
+        Toph: "./img/toph.jpeg"
+    };
+    document.getElementById("img-jugador-vs").src = imagenes[personajeJugador];
+    document.getElementById("img-jugador-vs").alt = personajeJugador;
+    document.getElementById("nombre-jugador-vs").innerText = personajeJugador;
+
+    document.getElementById("img-enemigo-vs").src = imagenes[personajeEnemigo];
+    document.getElementById("img-enemigo-vs").alt = personajeEnemigo;
+    document.getElementById("nombre-enemigo-vs").innerText = personajeEnemigo;
+
+    // Quitar resaltado ganador/perdedor al mostrar el panel VS
+    document.getElementById("versus-jugador").classList.remove("vs-ganador", "vs-perdedor");
+    document.getElementById("versus-enemigo").classList.remove("vs-ganador", "vs-perdedor");
+
+    // --- REINICIAR ANIMACIÓN DE ENTRADA ---
+    const vj = document.getElementById("versus-jugador");
+    const ve = document.getElementById("versus-enemigo");
+    vj.style.animation = "none";
+    ve.style.animation = "none";
+    // Forzar reflow
+    void vj.offsetWidth;
+    void ve.offsetWidth;
+    vj.style.animation = "vs-slide-in-left 0.7s cubic-bezier(.5,1.5,.5,1) both";
+    ve.style.animation = "vs-slide-in-right 0.7s cubic-bezier(.5,1.5,.5,1) both";
 
     // Actualizamos las vidas y habilitamos los botones de ataque
     actualizarVidasEnPantalla();
@@ -244,10 +287,24 @@ function finalizarJuego() {
     deshabilitarBotonesAtaque();
     const textoFinal = document.getElementById("texto-mensaje");
 
+    // Quita clases previas
+    document.getElementById("versus-jugador").classList.remove("vs-ganador", "vs-perdedor");
+    document.getElementById("versus-enemigo").classList.remove("vs-ganador", "vs-perdedor");
+
+    // --- REINICIAR ANIMACIÓN DE RESPLANDOR ---
+    const vj = document.getElementById("versus-jugador");
+    const ve = document.getElementById("versus-enemigo");
+    vj.style.animation = "";
+    ve.style.animation = "";
+
     if (vidasJugador <= 0) {
         textoFinal.innerText = `¡HAS SIDO DERROTADO! ${personajeEnemigo} se impuso.`;
+        document.getElementById("versus-jugador").classList.add("vs-perdedor");
+        document.getElementById("versus-enemigo").classList.add("vs-ganador");
     } else if (vidasEnemigo <= 0) {
-        textoFinal.innerText = `¡FELICITACIONES! ${personajeJugador} ha ganado.`;
+        textoFinal.innerText = `¡FELICITACIONES! ${personajeJugador} ganó la batalla.`;
+        document.getElementById("versus-jugador").classList.add("vs-ganador");
+        document.getElementById("versus-enemigo").classList.add("vs-perdedor");
     }
 }
 
@@ -285,4 +342,16 @@ function reiniciarJuego() {
 
     // 12.5) Deshabilitar nuevamente los botones de ataque
     deshabilitarBotonesAtaque();
+
+    // Ocultar el botón "Luchar"
+    let btnLuchar = document.getElementById("boton-luchar");
+    if (btnLuchar) btnLuchar.style.display = "none";
+
+    // Mostrar paneles de selección
+    document.getElementById("seleccionar-personaje").style.display = "block";
+    document.getElementById("seleccionar-enemigo").style.display = "block";
+
+    // Quitar resaltado ganador/perdedor al reiniciar
+    document.getElementById("versus-jugador").classList.remove("vs-ganador", "vs-perdedor");
+    document.getElementById("versus-enemigo").classList.remove("vs-ganador", "vs-perdedor");
 }
