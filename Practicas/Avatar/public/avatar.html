@@ -78,7 +78,17 @@
 
         <!-- === PANTALLA DE VIDAS Y ATAQUES === -->
         <section id="seleccionar-ataque" class="panel panel-ataque" style="margin-top: 20px;">
-            <h2 class="subtitulo">Elige tu Ataque</h2>
+            <div id="versus-panel" style="display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+                <div id="versus-jugador" style="text-align:center;">
+                    <img id="img-jugador-vs" src="" alt="" style="width:120px; height:120px; border-radius:12px; border:3px solid #f90; background:#fff;">
+                    <div id="nombre-jugador-vs" style="font-weight:bold; margin-top:8px;"></div>
+                </div>
+                <div style="font-size:2.5rem; font-weight:bold; margin:0 30px;">VS</div>
+                <div id="versus-enemigo" style="text-align:center;">
+                    <img id="img-enemigo-vs" src="" alt="" style="width:120px; height:120px; border-radius:12px; border:3px solid #09f; background:#fff;">
+                    <div id="nombre-enemigo-vs" style="font-weight:bold; margin-top:8px;"></div>
+                </div>
+            </div>
             <div class="vidas">
                 <p>Tu <span id="personaje-jugador" class="resaltado"></span> tiene <span id="vidas-jugador">3</span>
                     vidas</p>
@@ -86,10 +96,10 @@
                     vidas</p>
             </div>
             <div class="botones-ataque">
-                <button id="boton-puño" class="btn btn-fuego">Puño 👊</button>
-                <button id="boton-embestida" class="btn btn-agua">Embestida 🏃‍♂️</button>
-                <button id="boton-patada" class="btn btn-tierra">Patada 🤸</button>
-                <button id="boton-barrida" class="btn btn-aire">Barrida 🧎</button>
+                <button id="boton-puño" class="btn btn-ataque">Puño</button>
+                <button id="boton-embestida" class="btn btn-ataque">Embestida</button>
+                <button id="boton-patada" class="btn btn-ataque">Patada</button>
+                <button id="boton-barrida" class="btn btn-ataque">Barrida</button>
             </div>
         </section>
 
